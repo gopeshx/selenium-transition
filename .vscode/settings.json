@@ -1,0 +1,23 @@
+{
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.import.exclusions": [
+        "**/node_modules/**",
+        "**/.metadata/**",
+        "**/archetype-resources/**",
+        "**/META-INF/maven/**",
+        "**/target/**",
+        "**/test-results/**",
+        "**/playwright-report/**"
+    ],
+    "files.watcherExclude": {
+        "**/target/**": true,
+        "**/node_modules/**": true,
+        "**/test-results/**": true,
+        "**/playwright-report/**": true
+    },
+    "search.exclude": {
+        "**/target": true,
+        "**/node_modules": true
+    }
+}

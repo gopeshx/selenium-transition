@@ -55,6 +55,9 @@ public class ExtentTestListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
+        if (CURRENT_TEST.get() == null) {
+            onTestStart(result);
+        }
         CURRENT_TEST.get().skip(result.getThrowable());
         CURRENT_TEST.remove();
     }
