@@ -5,6 +5,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,11 +21,13 @@ public final class SeleniumBrowser implements UiBrowser {
     public SeleniumBrowser() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
+        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
         if (TestConfig.getBoolean("headless")) {
             options.addArguments("--headless=new");
         }
         options.addArguments("--window-size=1440,1000", "--disable-dev-shm-usage", "--no-sandbox");
         driver = new ChromeDriver(options);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestConfig.getInt("pageLoadTimeoutSeconds")));
         wait = new WebDriverWait(driver, Duration.ofSeconds(TestConfig.getInt("explicitWaitSeconds")));
     }
 
@@ -119,7 +122,7 @@ public final class SeleniumBrowser implements UiBrowser {
     }
 
     @Override
-    public void close() {
+    public void quit() {
         driver.quit();
     }
 

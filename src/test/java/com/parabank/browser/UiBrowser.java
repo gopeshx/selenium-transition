@@ -2,7 +2,7 @@ package com.parabank.browser;
 
 import java.util.List;
 
-public interface UiBrowser extends AutoCloseable {
+public interface UiBrowser {
     void open(String url);
     void click(String cssSelector);
     void clickLink(String linkText);
@@ -20,6 +20,5 @@ public interface UiBrowser extends AutoCloseable {
     String currentUrl();
     String title();
 
-    @Override
-    void close();
+    void quit();
 }

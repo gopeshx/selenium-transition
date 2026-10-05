@@ -18,7 +18,7 @@ public abstract class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void stopBrowser() {
         if (browser != null) {
-            browser.close();
+            browser.quit();
         }
     }
 }

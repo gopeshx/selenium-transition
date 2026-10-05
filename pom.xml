@@ -7,9 +7,10 @@
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <selenium.version>4.34.0</selenium.version>
+        <selenium.version>4.50.0</selenium.version>
         <testng.version>7.11.0</testng.version>
         <extent.version>5.1.2</extent.version>
+        <slf4j.version>2.0.17</slf4j.version>
     </properties>
     <dependencies>
         <dependency>
@@ -32,6 +33,12 @@
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>${extent.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>${slf4j.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

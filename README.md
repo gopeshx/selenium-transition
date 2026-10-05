@@ -10,7 +10,7 @@ Prerequisites: JDK 17 or newer, Maven, and Google Chrome. WebDriverManager resol
 mvn clean test
 ```
 
-Tests run headlessly by default. Override browser settings or the application URL with Maven system properties:
+Tests run headlessly by default. Chrome uses eager page navigation plus explicit element waits; the page-load timeout defaults to 45 seconds and can be changed in `src/test/resources/config.properties`. Override browser settings or the application URL with Maven system properties:
 
 ```powershell
 mvn test -Dheadless=false -Dbrowser=chrome
