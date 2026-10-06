@@ -19,5 +19,6 @@
     "search.exclude": {
         "**/target": true,
         "**/node_modules": true
-    }
+    },
+    "java.compile.nullAnalysis.mode": "automatic"
 }
