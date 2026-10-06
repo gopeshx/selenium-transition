@@ -1,0 +1,17 @@
+{
+  "name": "parabank-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ParaBank UI automation migrated from Selenium/TestNG (Java) to Playwright (JavaScript)",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "dotenv": "^16.4.5"
+  }
+}

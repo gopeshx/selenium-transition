@@ -39,3 +39,6 @@ Registration and recovery tests create unique demo customers. Account workflows 
 Test flows call page objects, page objects use the `UiBrowser` interface, and Selenium-specific setup/interactions live in `SeleniumBrowser`. A Playwright migration can add another `UiBrowser` implementation and switch `BrowserFactory` without rewriting the feature tests or page-object workflows. Keep browser actions in that adapter and avoid importing Selenium types outside it.
 
 Page-specific selector constants live in `com.parabank.locators`, with separate classes for registration, login, recovery, account overview/details, opening accounts, transfers, bill pay, and transaction search. Page objects own workflows, and the suite is sequential because it writes to the public demo service.
+## Playwright (JavaScript) version
+
+The suite has been migrated to Playwright — see [`playwright/README.md`](playwright/README.md).
